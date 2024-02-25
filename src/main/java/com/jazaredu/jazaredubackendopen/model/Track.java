@@ -1,4 +1,4 @@
-package com.jazaredu.jazaredubackendopen.mode;
+package com.jazaredu.jazaredubackendopen.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

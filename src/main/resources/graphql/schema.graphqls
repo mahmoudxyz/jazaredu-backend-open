@@ -1,0 +1,10 @@
+type Track {
+    id:ID
+    title:String
+    description:String
+}
+
+type Query{
+    getAllTracks:[Track]
+}
+
