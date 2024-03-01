@@ -8,17 +8,21 @@ import lombok.NoArgsConstructor;
 import java.util.HashSet;
 import java.util.Set;
 
+
 @Data
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-public class Track {
+public class Topic {
     @Id
     @GeneratedValue
     private Long id;
     private String title;
-    private String description;
 
-    @ManyToMany(mappedBy = "tracks")
+    @Lob
+    @Column(columnDefinition = "TEXT")
+    private String content;
+
+    @ManyToMany(mappedBy = "topics", fetch = FetchType.EAGER)
     private Set<Course> courses = new HashSet<>();
 }

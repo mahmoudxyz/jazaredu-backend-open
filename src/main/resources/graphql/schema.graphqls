@@ -2,9 +2,40 @@ type Track {
     id:ID
     title:String
     description:String
+    courses:[Course]
+}
+
+type Topic {
+    id:ID
+    title:String
+    content:String
+}
+
+type Course {
+    id:ID
+    title:String
+    description:String
+    topics:[Topic]
+}
+
+input TopicInput {
+    title:String
+    content:String
+}
+
+input CourseInput {
+    title:String
+    description:String
+    topics:[TopicInput]
 }
 
 type Query{
     getAllTracks:[Track]
+    getAllCoursesByTrackId(trackId:ID):[Course]
+    getAllCourses:[Course]
 }
 
+
+type Mutation {
+    createNewCourse(courseInput:CourseInput):Course
+}
